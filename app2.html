@@ -1,0 +1,68 @@
+<html>
+<head>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <!-- module - System de routing-->
+    <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+
+    <!-- routing -->
+    <script type="text/javascript" src="routing.js"></script>
+
+
+    <!-- Controllers -->
+    <script type="text/javascript" src="src/controllers/categoryController.js"></script>
+    <script type="text/javascript" src="src/controllers/itemsController.js"></script>
+
+    <!-- Directives -->
+    <script type="text/javascript" src="src/directives/itemDecoratorDirective.js"></script>
+    <script type="text/javascript" src="src/directives/categoryDecoratorDirective.js"></script>
+
+    <!-- Services -->
+    <script type="text/javascript" src="src/services/itemProvider.js"></script>
+    <script type="text/javascript" src="src/services/categoryProvider.js"></script>
+
+</head>
+<body ng-app="collectify">
+
+<div ng-view>
+
+
+</div>
+
+
+
+</body>
+</html>
+
+<!--
+
+<br>
+--------------Item-----------------
+<br>
+<div ng-controller="itemList">
+
+    <div ng-repeat="item in items">
+        <p>Item : "{{item.name}}" dans la categorie {{item.category_id}}</p>
+    </div>
+
+    <br><b>Avec directive :</b></b><br>
+    <div ng-repeat="item in items">
+        <p decorate-item ></p>
+
+    </div>
+</div>
+<br>
+--------------Category-----------------
+<br>
+<div ng-controller="categoryList">
+
+    <div ng-repeat="category in categorys">
+        <p>Category : "{{category.name}}" son id est {{category.id}}</p>
+    </div>
+
+    <br><b>Avec directive :</b><br>
+    <div ng-repeat="category in categorys">
+        <p decorate-category ></p>
+
+    </div>
+</div> -->

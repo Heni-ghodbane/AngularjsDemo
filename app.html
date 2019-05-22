@@ -1,0 +1,90 @@
+<html>
+<head>
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+</head>
+<body ng-app="myApp" ng-init="myVar=1;secondeVar=2;myVar1='1';secondeVar1='2';monTest='Hello'">
+
+<button ng-click="count = count + 1" ng-init="count=0">
+    Increment
+</button>
+<span>
+  count: {{count}}
+</span>
+<br>
+Somme : {{myVar + secondeVar }}
+<br>
+Concaténation : {{myVar1 + secondeVar1 }}
+
+<br>
+<input type="text" ng-model="monTest" value="{{monTest}}"> {{monTest}}
+<br>
+
+<span  ng-controller="Contoller1">
+<p>  {{ var1 }} </p>
+</span>
+
+
+<div class="container-fluid" ng-app="myApp" ng-controller="Contoller1">
+    Name: <input type="text" ng-model="name"/>
+    <ul>
+        <li ng-repeat="coders in customers | filter:name | orderBy:'name'">{{coders.name}}-{{coders.city}}</li>
+    </ul>
+</div>
+
+<div ng-controller="Contoller1">
+ Somme:  {{var2 + var3}}
+
+</div>
+
+<div>
+    <p>{{ var4 }}</p>
+</div>
+
+
+<div ng-controller="mySecondController">
+    <p ng-repeat="item in items">
+       - {{item.name | uppercase }} est {{ item.sexe | lowercase}} et a {{ item.age }} ans.
+    </p>
+</div>
+
+<script type="text/javascript">
+
+    var myApp = angular.module('myApp',[]);
+    myApp.controller('Contoller1', ['$scope', '$rootScope', function($scope, $rootScope) {
+                $scope.var1 = 'toto';
+                $scope.customers=[
+                    {name:'Alphy Poxy',city:'Mbita'},
+                    {name:'Kibaki Watson',city:'Kikuyu'},
+                    {name:'John Legend',city:'Lake'},
+                    {name:'Sony',city:'HB'}
+                ];
+
+                $scope.var2 = 2;
+                $scope.var3 = 2;
+
+                $rootScope.var4 = 'test';
+            }]
+
+    );
+
+
+    myApp.controller('mySecondController', ['$scope', function($scope) {
+        $scope.items=[
+            {name:'Hani',age:'25', sexe:'Homme'},
+            {name:'Hana',age:'20', sexe:'Femme'},
+            {name:'Mohamed',age:'28', sexe:'Homme'},
+            {name:'Jamila',age:'45', sexe:'Femme'},
+            {name:'Taoufik',age:'56', sexe:'Homme'}
+
+        ];
+    }]
+    );
+</script>
+
+
+
+
+
+
+</body>
+</html>

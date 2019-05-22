@@ -1,0 +1,34 @@
+<h1>Welcome to collectify</h1>
+
+<ul>
+    <li><a href="#/">Index</a></li>
+    <li><a href="#/items/new">Create new items</a></li>
+    <li><a href="#/categories">List of categories</a></li>
+    <li><a href="#/categories/new">Create new categories</a></li>
+</ul>
+<br>
+--------------Item-----------------
+<br>
+<div >
+
+    <div ng-repeat="item in items">
+        <p>Item : "{{item.name}}" dans la categorie {{item.category_id}}</p>
+    </div>
+
+    <br><b>Avec directive :</b></b><br>
+    <div ng-repeat="item in items">
+
+       <!-- <br>
+        <b>Restrict 'A' Attribute</b>
+        <p decorate-item ></p>
+       -->
+       <!--
+        <br>
+        <b>Restrict 'E' element</b>
+        <decorate-item ></decorate-item>
+       -->
+        <br>
+        <b>Restrict 'C' element</b>
+        <p class="decorate-item" ></p>
+    </div>
+</div>

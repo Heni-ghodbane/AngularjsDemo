@@ -1,0 +1,18 @@
+<h1>Welcome to collectify</h1>
+
+<ul>
+    <li><a href="#/">Index</a></li>
+    <li><a href="#/items/new">Create new items</a></li>
+    <li><a href="#/categories">List of categories</a></li>
+    <li><a href="#/categories/new">Create new categories</a></li>
+</ul>
+
+{{categorys}}
+<form>
+
+    <label>Category: </label>
+    <input ng-model="category.name" type="text" name="name">
+
+
+    <button ng-click="createCategory(category)">Create</button>
+</form>
